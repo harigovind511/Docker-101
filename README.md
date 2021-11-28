@@ -26,21 +26,15 @@ This is a text document, that contains all the commands required to assemble the
 
       [Read More](https://docs.docker.com/engine/reference/builder/)
 
-2. #### Image: 
-
-A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template.
+2.  **Image:** A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template.
 
       [Read More](https://searchitoperations.techtarget.com/definition/Docker-image)
 
-3. #### Container: 
-
-A container is an instance of an image, with all the dependencies and runtime managed required to run the application. This also has access to Host OS Kernal to access the underlying physical hardware.
+3. **Container:** A container is an instance of an image, with all the dependencies and runtime managed required to run the application. This also has access to Host OS Kernal to access the underlying physical hardware.
 
       [Read More](https://www.docker.com/resources/what-container)
 
-4. #### Registry: 
-
-A registry is a storage and content delivery system, holding named Docker images, available in different tagged versions. Images are also refered as Repositories.
+4. **Registry:** A registry is a storage and content delivery system, holding named Docker images, available in different tagged versions. Images are also refered as Repositories.
 
       [Read More](https://docs.docker.com/registry/introduction/)
 
