@@ -20,10 +20,8 @@ Docker is an open platform for developing, shipping, and running applications. D
 | Require high effort to backup and restore applications, as all the dependencies go on single File system. | Applications can be easily migrated between machines and environments, as each container can be represented as 1 Docker file. |
 
 ### Key Concepts
-1. #### Dockerfile: 
-
-This is a text document, that contains all the commands required to assemble the Image of the application. Docker can automatically build images by reading instructions within the Dockerfile document.
-
+1.  **Dockerfile:** This is a text document, that contains all the commands required to assemble the Image of the application. Docker can automatically build images by reading instructions within the Dockerfile document.
+      
       [Read More](https://docs.docker.com/engine/reference/builder/)
 
 2.  **Image:** A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template.
