@@ -43,18 +43,39 @@ This is a text document, that contains all the commands required to assemble the
 <img width="496" alt="Drawing" src="https://user-images.githubusercontent.com/30496850/143784915-4d8cd80d-79ac-4fc0-b7d7-de306ead35d0.png">
 
 ## Working Session:
-### Dockerize Simple JavaScript Application
+### How to Dockerize an Application
 
 
 #### Steps:
 1. Create a new docker definition file in the root directory of your application and name the file as ##### Dockerfile
 2. Add following commands to the Dockerfile:
+> For JavaScript/Node Application
 ```dockerfile
 FROM node:alpine
 COPY . /app
 WORKDIR /app
 CMD node <JS_FILE_NAME>
 ```
+> For ASP.Net Core Application
+```dockerfile
+ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+ WORKDIR /app
+ EXPOSE 80
+ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+ WORKDIR /src
+ COPY ["<PROJECT_NAME>.csproj", ""]
+ RUN dotnet restore "./<PROJECT_NAME>.csproj"
+ COPY . .
+ WORKDIR "/src/."
+ RUN dotnet build "<PROJECT_NAME>.csproj" -c Release -o /app/build
+ FROM build AS publish
+ RUN dotnet publish "<PROJECT_NAME>.csproj" -c Release -o /app/publish
+ FROM base AS final
+ WORKDIR /app
+ COPY --from=publish /app/publish .
+ ENTRYPOINT ["dotnet", "<PROJECT_NAME>.dll"]
+```
+
 3. Open a Command Prompt/PowerShell/Terminal at the root directory of the application to be Containerized.
 4. Build the Docker Image for the application using Docker Build Command, as below:
 ```dockerfile
@@ -83,7 +104,7 @@ docker push <DOCKER_HUB_USERNAME:IMAGE_NAME>
 ```
 Wait for push activity to be successful.
 
-#### NOTE: The pushed Docker Image, can now be pulled on any host machine running Docker Daemon using the Docker Pull Command and then can be ran easily as below:
+> NOTE: The pushed Docker Image, can now be pulled on any host machine running Docker Daemon using the Docker Pull Command and then can be ran easily as below:
 ```dockerfile
 docker pull <DOCKER_HUB_USERNAME:IMAGE_NAME>
 docker run -d -p 8080:80 <DOCKER_HUB_USERNAME:IMAGE_NAME>
