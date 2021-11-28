@@ -48,3 +48,7 @@ A registry is a storage and content delivery system, holding named Docker images
 ### Docker Architecture
 <img width="496" alt="Drawing" src="https://user-images.githubusercontent.com/30496850/143784915-4d8cd80d-79ac-4fc0-b7d7-de306ead35d0.png">
 
+## Working Session:
+### Dockerize Simple JavaScrip Application
+
+
