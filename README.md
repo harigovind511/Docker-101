@@ -43,6 +43,23 @@ This is a text document, that contains all the commands required to assemble the
 <img width="496" alt="Drawing" src="https://user-images.githubusercontent.com/30496850/143784915-4d8cd80d-79ac-4fc0-b7d7-de306ead35d0.png">
 
 ## Working Session:
-### Dockerize Simple JavaScrip Application
+### Dockerize Simple JavaScrip1 Application
 
 
+#### Steps:
+1. Create a new docker definition file in the root directory of your application and name the file as ##### Dockerfile
+2. Add following commands to the Dockerfile:
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+ 
+```python
+s = "Python syntax highlighting"
+print s
+```
+ 
+```
+No language indicated, so no syntax highlighting. 
+But let's throw in a <b>tag</b>.
+```
