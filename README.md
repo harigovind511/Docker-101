@@ -19,10 +19,13 @@ Docker is an open platform for developing, shipping, and running applications. D
 | Difficult depenceny managed for applications to be deployed. | Easy dependeny management, as containers natively isolate and load all the dependencies into the internal File system. |
 | Require high effort to backup and restore applications, as all the dependencies go on single File system. | Applications can be easily migrated between machines and environments, as each container can be represented as 1 Docker file. |
 
-### Docker Architecture
-
 ### Key Concepts
 1. Dockerfile
 2. Image
 3. Container
 4. Registry
+
+
+### Docker Architecture
+<img width="496" alt="Drawing" src="https://user-images.githubusercontent.com/30496850/143784915-4d8cd80d-79ac-4fc0-b7d7-de306ead35d0.png">
+
