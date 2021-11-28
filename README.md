@@ -49,17 +49,9 @@ This is a text document, that contains all the commands required to assemble the
 #### Steps:
 1. Create a new docker definition file in the root directory of your application and name the file as ##### Dockerfile
 2. Add following commands to the Dockerfile:
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
- 
-```python
-s = "Python syntax highlighting"
-print s
-```
- 
-```
-No language indicated, so no syntax highlighting. 
-But let's throw in a <b>tag</b>.
+```docker
+FROM node:alpine
+COPY . /app
+WORKDIR /app
+CMD node index.js
 ```
