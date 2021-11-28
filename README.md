@@ -14,9 +14,10 @@ Docker is an open platform for developing, shipping, and running applications. D
 
 | VM        | Container         |
 | ------------- |:-------------:|
-| col 3 is      | right-aligned |
-| col 2 is      | centered      |
-| zebra stripes | are neat      |
+| Use Hypervisors to virtualy emulate physical hardware. | Use the OS Kernal to access underlying host hardware. |
+| Slow start up, as the VM OS needs to be launched first | Quick start up, as containers only need to access the OS Kernal. |
+| Difficult depenceny managed for applications to be deployed. | Easy dependeny management, as containers natively isolate and load all the dependencies into the internal File system. |
+| Require high effort to backup and restore applications, as all the dependencies go on single File system. | Applications can be easily migrated between machines and environments, as each container can be represented as 1 Docker file. |
 
 ### Docker Architecture
 
