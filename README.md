@@ -49,9 +49,35 @@ This is a text document, that contains all the commands required to assemble the
 #### Steps:
 1. Create a new docker definition file in the root directory of your application and name the file as ##### Dockerfile
 2. Add following commands to the Dockerfile:
-```docker
+```dockerfile
 FROM node:alpine
 COPY . /app
 WORKDIR /app
-CMD node index.js
+CMD node <JS_FILE_NAME>
+```
+3. Open a Command Prompt/PowerShell/Terminal at the root directory of the application to be Containerized.
+4. Build the Docker Image for the application using Docker Build Command, as below:
+```dockerfile
+docker build -t <IMAGE_NAME> .
+```
+
+Wait for build to finish.
+5. Run the Docker image, using the Docker Run command.
+```dockerfile
+docker run <IMAGE_NAME>
+```
+
+6. To push Docker image to Docker Hub, use Docker Login command to login to the Registry.
+```dockerfile
+docker login
+```
+
+7. Assign a Tag to Docker Image before pushing, using the Docker Tag command as below:
+```dockerfile
+docker tag <IMAGE_NAME> <DOCKER_HUB_USERNAME:IMAGE_NAME>
+```
+
+8. Push Docker Image, to Docker Hub using the Push command as follows:
+```dockerfile
+docker push <DOCKER_HUB_USERNAME:IMAGE_NAME>
 ```
