@@ -43,7 +43,7 @@ This is a text document, that contains all the commands required to assemble the
 <img width="496" alt="Drawing" src="https://user-images.githubusercontent.com/30496850/143784915-4d8cd80d-79ac-4fc0-b7d7-de306ead35d0.png">
 
 ## Working Session:
-### Dockerize Simple JavaScrip1 Application
+### Dockerize Simple JavaScript Application
 
 
 #### Steps:
@@ -80,4 +80,11 @@ docker tag <IMAGE_NAME> <DOCKER_HUB_USERNAME:IMAGE_NAME>
 8. Push Docker Image, to Docker Hub using the Push command as follows:
 ```dockerfile
 docker push <DOCKER_HUB_USERNAME:IMAGE_NAME>
+```
+Wait for push activity to be successful.
+
+#### NOTE: The pushed Docker Image, can now be pulled on any host machine running Docker Daemon using the Docker Pull Command and then can be ran easily as below:
+```dockerfile
+docker pull <DOCKER_HUB_USERNAME:IMAGE_NAME>
+docker run -d -p 8080:80 <DOCKER_HUB_USERNAME:IMAGE_NAME>
 ```
